@@ -20,6 +20,9 @@ export default class Search extends Component {
             sortBy: e.target.value
         })
     }
+
+
+
     handleSortOptionChange = (e) => {
         this.setState({
             sortOrder: e.target.value
@@ -65,13 +68,11 @@ export default class Search extends Component {
             <div className="body">
                 <div className="sidebar">
                     Seach By Attribute!
-                    <div className="dropdown">
-                        <select key="pokemon.pokemon" onChange={this.handlePokeOptionChange}>
-                            <option value="pokemon">Name</option>
-                            <option value="type_1">Type</option>
-                            <option value="attack">Attack</option>
-                            <option value="defense">Defense</option>
-                        </select>
+                    <div className="radio-button-parent" onChange={this.handlePokeOptionChange}>
+                        Name <input type="radio" value="pokemon" name="radio" />
+                        Type <input type="radio" value="type_1" name="radio" />
+                        Attack <input type="radio" value="attack" name="radio" />
+                        Defense <input type="radio" value="defense" name="radio" />
 
                     </div>
                     <div className="dropdown">
