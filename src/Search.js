@@ -3,14 +3,14 @@ import pokemon from './pokemon.js'
 // import Sort from './Sort.js';
 // import Searchbar from './Searchbar.js';
 import PokeList from './pokeList.js';
-import Dropdown from './Dropdown.js';
+// import Dropdown from './Dropdown.js';
 
 
 export default class Search extends Component {
     state = {
         pokemon: pokemon,
-        sortOrder: '',
-        sortBy: '',
+        sortBy: 'pokemon',
+        sortOrder: 'ascending',
         filter: '',
     }
 
@@ -22,47 +22,73 @@ export default class Search extends Component {
     }
     handleSortOptionChange = (e) => {
         this.setState({
-            sortBy: e.target.value
+            sortOrder: e.target.value
         })
+    }
+
+    handleInputChange = (e) => {
+        this.setState({
+            filter: e.target.value,
+        });
     }
 
 
     render() {
-
-        if (this.state.sortBy) {
-            this.state.pokemon.sort(
-                (a, b) => a[this.state.sortBy] - (b[this.state.sortBy])
-            );
+        if ((this.state.sortBy !== 'attack' && this.state.sortBy !== 'defense')) {
+            if (this.state.sortOrder === 'ascending') {
+                this.state.pokemon.sort(
+                    (a, b) => a[this.state.sortBy].localeCompare(b[this.state.sortBy])
+                );
+            } else {
+                this.state.pokemon.sort(
+                    (a, b) => b[this.state.sortBy].localeCompare(a[this.state.sortBy])
+                );
+            }
         }
 
-        const pokeOptions = ['pokemon', 'attack', 'defense']
-        const sortOptions = ['ascending', 'descending']
+        if ((this.state.sortBy === 'attack' || this.state.sortBy === 'defense')) {
+            if (this.state.sortOrder === 'ascending') {
+                this.state.pokemon.sort(
+                    (a, b) => a[this.state.sortBy] - (b[this.state.sortBy])
+                );
+            } else {
+                this.state.pokemon.sort(
+                    (a, b) => b[this.state.sortBy] - (a[this.state.sortBy])
+                );
+            }
+        }
+
 
         const filteredPokemon = this.state.pokemon.filter(pokemo => pokemo.pokemon.includes(this.state.filter))
 
         return (
             <div className="body">
                 <div className="sidebar">
+                    Seach By Attribute!
                     <div className="dropdown">
-                        Which attribute would you like to search by?
-                            <Dropdown
-                            currentValue={this.state.sortBy}
+                        <select key="pokemon.pokemon" onChange={this.handlePokeOptionChange}>
+                            <option value="pokemon">Name</option>
+                            <option value="type_1">Type</option>
+                            <option value="attack">Attack</option>
+                            <option value="defense">Defense</option>
+                        </select>
 
-                            handleChange={this.handlePokeOptionChange}
-                            options={pokeOptions}
-                        />
                     </div>
                     <div className="dropdown">
-                        <Dropdown
-                            currentValue={this.state.sortOrder}
+                        <select key="pokemon.pokemon" onChange={this.handleSortOptionChange}>
+                            <option value="ascending">Ascending</option>
+                            <option value="descending">Descending</option>
+                        </select>
 
-                            handleChange={this.handleSortOptionChange}
-                            options={sortOptions}
-                        />
+
                     </div>
+                    Search by Pokemon Name!
+                    <input className="input-box" onChange={this.handleInputChange} />
                 </div>
                 <PokeList pokemon={filteredPokemon} />
+
             </div>
         )
+
     }
 }
