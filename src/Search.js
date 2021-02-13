@@ -12,6 +12,7 @@ export default class Search extends Component {
         sortBy: 'pokemon',
         sortOrder: 'ascending',
         filter: '',
+        searchQuery: '',
     }
 
 
@@ -31,9 +32,16 @@ export default class Search extends Component {
 
     handleInputChange = (e) => {
         this.setState({
-            filter: e.target.value,
+            searchQuery: e.target.value,
         });
     }
+
+    handleSubmit = (e) => {
+        e.preventDefault()
+        this.setState({ filter: this.state.searchQuery })
+    }
+
+
 
 
     render() {
@@ -84,7 +92,10 @@ export default class Search extends Component {
 
                     </div>
                     Search by Pokemon Name!
-                    <input className="input-box" onChange={this.handleInputChange} />
+                    <form onSubmit={this.handleSubmit} >
+                        <input className="input-box" onChange={this.handleInputChange} />
+                        <input type="submit" value="Submit" />
+                    </form>
                 </div>
                 <PokeList pokemon={filteredPokemon} />
 
