@@ -10,16 +10,19 @@ export default withRouter(class Header extends Component {
                     <img className="header-img" src="https://fontmeme.com/permalink/210212/9b950c68d9c4167ddf4ab9f8c28238f4.png" alt="pokemon-font" border="0" />
                 </span>
                 <ul className="nav">
-                    <NavLink exact className="links" to="/">
+                    <NavLink exact activeClassName="selected" className="links" to="/">
                         Home
                     </NavLink>
-
-                    <NavLink exact className="links" to="/search">
-                        Search
+                    {
+                        this.props.location.pathname !== '/search'
+                        && <NavLink exact activeClassName="selected" className="links" to="/search">
+                            Search
                   </NavLink>
+                    }
                 </ul>
-
-
+                {
+                    this.props.location.pathname === '/search'
+                }
             </header>
         )
     }
