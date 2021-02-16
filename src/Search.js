@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import pokemon from './pokemon.js'
-// import Sort from './Sort.js';
-// import Searchbar from './Searchbar.js';
+import Sort from './Sort.js';
+import Searchbar from './Searchbar.js';
 import PokeList from './pokeList.js';
 // import Dropdown from './Dropdown.js';
 
@@ -75,27 +75,9 @@ export default class Search extends Component {
         return (
             <div className="body">
                 <div className="sidebar">
-                    Seach By Attribute!
-                    <div className="radio-button-parent" onChange={this.handlePokeOptionChange}>
-                        Name <input type="radio" value="pokemon" name="radio" />
-                        Type <input type="radio" value="type_1" name="radio" />
-                        Attack <input type="radio" value="attack" name="radio" />
-                        Defense <input type="radio" value="defense" name="radio" />
+                    <Sort handleSortOptionChange={this.handleSortOptionChange} handlePokeOptionChange={this.handlePokeOptionChange} />
+                    <Searchbar handleSubmit={this.handleSubmit} handleInputChange={this.handleInputChange} />
 
-                    </div>
-                    <div className="dropdown">
-                        <select key="pokemon.pokemon" onChange={this.handleSortOptionChange}>
-                            <option value="ascending">Ascending</option>
-                            <option value="descending">Descending</option>
-                        </select>
-
-
-                    </div>
-                    Search by Pokemon Name!
-                    <form onSubmit={this.handleSubmit} >
-                        <input className="input-box" onChange={this.handleInputChange} />
-                        <input type="submit" value="Submit" />
-                    </form>
                 </div>
                 <PokeList pokemon={filteredPokemon} />
 

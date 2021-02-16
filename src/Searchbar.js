@@ -4,7 +4,11 @@ export default class Searchbar extends Component {
     render() {
         return (
             <div>
-
+                <form onSubmit={this.props.handleSubmit} >
+                    Search by Pokemon Name!
+                        <input className="input-box" onChange={this.props.handleInputChange} />
+                    <input type="submit" value="Submit" />
+                </form>
             </div>
         )
     }

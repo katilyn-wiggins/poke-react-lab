@@ -3,6 +3,9 @@
 unsure how to add planning photo - it is in my pubic folder under miroboard! 
 
 
+![alt text](./public/Miroboard.png)
+
+
 
 
 
