@@ -2,7 +2,7 @@ header {
   height: 100px; 
   background-color: #61dafb;
   width: 100%;
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid rgb(68, 67, 67);
 }
 
 .header-title {
@@ -37,10 +37,11 @@ header {
 }
 
 .poke-card {
-  padding: 10px;
-  /* background-color: lightslategray; */
+  padding: 20px;
   margin: 10px;
   background-image: url('https://i.pinimg.com/originals/92/29/72/922972e50871eebae38532fe4f4facb9.png');
+  height: 200px;
+  width: 150px;
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -53,20 +54,21 @@ header {
 }
 
 .poke-image { 
-  height: 100px;
-  padding-top: 60px;
+  height: 90px;
+  padding-top: 15px;
   margin-left: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .poke-text { 
   font-size: 10px;
-  padding-left: 40px;
+  padding-left: 20px;
   padding-right: 40px;
   padding-bottom: 40px;
   margin-top: 0;
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
   left: 200px;
+  color: rgb(68, 67, 67)
 
 }
 
@@ -82,13 +84,14 @@ header {
   position: fixed;
   left: 5px;
   width: 100px;
-  height: 100%;
+  height: 300px;
   background-color: rgb(224, 94, 94);
   padding: 15px;
   margin-top: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
+  justify-content: space-evenly;
   text-align: center;
   border-radius: 50px;
   border: 3px solid gold;
@@ -145,4 +148,14 @@ body {
 
 a {
   text-decoration: none;
+}
+
+
+.spinner { 
+  display: flex; 
+  flex-direction: row;
+  align-self: center;
+  justify-content: center;
+  margin-top: 20px;
+
 }
