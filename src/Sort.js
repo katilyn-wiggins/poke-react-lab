@@ -15,8 +15,8 @@ export default class Sort extends Component {
                 </div>
                 <div className="dropdown">
                     <select key="pokemon.pokemon" onChange={this.props.handleSortOptionChange}>
-                        <option value="ascending">Ascending</option>
-                        <option value="descending">Descending</option>
+                        <option value="asc">Ascending</option>
+                        <option value="desc">Descending</option>
                     </select>
                 </div>
             </div>
