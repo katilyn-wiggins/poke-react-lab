@@ -17,6 +17,7 @@ export default class Search extends Component {
         searchQuery: '',
         loading: false,
 
+
         totalPokemon: 0,
         perPage: 12,
         currentPage: 1,
@@ -102,7 +103,7 @@ export default class Search extends Component {
 
     //pokemon per page 
     handlePerPage = async (e) => {
-        this.setState({
+        await this.setState({
             perPage: e.target.value
         })
         await this.getPokemon();
@@ -111,12 +112,10 @@ export default class Search extends Component {
 
 
     render() {
-        console.log(this.state.perPage)
+        // console.log(this.state.perPage)
         const lastPage = Math.ceil(this.state.totalPokemon / this.state.perPage);
         return (
             <div className="body">
-
-
                 <select onChange={this.handlePerPage}>
                     <option value={12}>12</option>
                     <option value={24}>24</option>
@@ -124,19 +123,22 @@ export default class Search extends Component {
                     <option value={60}>60</option>
                 </select>
 
-
                 <button disabled={this.state.currentPage === 1} onClick={this.handlePreviousClick}>Previous</button><span>Page: {this.state.currentPage}</span>
                 <button disabled={this.state.currentPage === lastPage} onClick={this.handleNextClick}>Next</button>
                 <div className="sidebar">
 
                     <Sort handleSortOptionChange={this.handleSortOptionChange} handlePokeOptionChange={this.handlePokeOptionChange} />
+                    Pokemon Per Page:
+
                     <Searchbar handleSubmit={this.handleSubmit} handleInputChange={this.handleInputChange} />
+
 
                 </div>
                 {
                     this.state.loading
                         ? <Spinner />
                         : <PokeList pokemon={this.state.pokeData} />
+
                 }
             </div>
         )

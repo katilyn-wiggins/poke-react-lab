@@ -39,7 +39,7 @@ header {
 .poke-card {
   padding: 20px;
   margin: 10px;
-  background-image: url('https://i.pinimg.com/originals/92/29/72/922972e50871eebae38532fe4f4facb9.png');
+  /* background-image: url('https://i.pinimg.com/originals/92/29/72/922972e50871eebae38532fe4f4facb9.png'); */
   height: 200px;
   width: 150px;
   background-position: center;
@@ -68,7 +68,7 @@ header {
   margin-top: 0;
   /* margin-bottom: 50px; */
   left: 200px;
-  color: rgb(68, 67, 67)
+  color: rgb(68, 67, 67);
 
 }
 
@@ -158,4 +158,72 @@ a {
   justify-content: center;
   margin-top: 20px;
 
+}
+
+
+
+.fire{
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/3c938f85-f834-4bb3-b3b2-97d295769464/d7zqyr8-039ea9a8-0b12-4931-834b-f03c46ba92c1.png');
+}
+
+.electric{ 
+  background-image: url('https://i.pinimg.com/originals/92/29/72/922972e50871eebae38532fe4f4facb9.png');
+}
+
+.water{
+  background-image: url('https://i.pinimg.com/originals/c9/72/a5/c972a5992714005846e1124d04a41c57.png');
+}
+
+.dragon{
+  background-image: url('https://i.pinimg.com/originals/2d/e6/4a/2de64a23060cf5dac90647957828ccdb.png');
+}
+
+.grass{
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/592ec50f-7a98-4675-a8f2-7915168c695f/d6i22ey-7a362fc8-4fc8-4b90-9be9-2bfaae594ab3.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvNTkyZWM1MGYtN2E5OC00Njc1LWE4ZjItNzkxNTE2OGM2OTVmXC9kNmkyMmV5LTdhMzYyZmM4LTRmYzgtNGI5MC05YmU5LTJiZmFhZTU5NGFiMy5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.dooRRM2K6c7UqpCsa2-XlZr6Tiq6C5TFx_3oKsLaAzc');
+}
+
+.psychic{
+  background-image: url('https://www.pokebeach.com/images/fake-cards/psychic/neo/basic.jpg');
+}
+
+.steel{
+  background-image: url('https://i.pinimg.com/originals/b9/42/f6/b942f63a76a212f89d6459133608ded9.png');
+}
+.dark{
+  background-image: url('https://lh3.googleusercontent.com/proxy/yIDhJJ_qQ7fxe8LeRy9hgy7UoANz3sKLawNn7-htrrQzsRqYXTv74QhvZJ4H3zUfTUXeFK0tphWOB96HNCLd4jXl3kM2l92X4uzkSc5EVVCVVJjQPz4GPpvJG4dN7blIQfbernmHEp3FBerOSaozGBc6dYIdZ-W36DeB');
+}
+.bug{
+  background-image: url('https://lh3.googleusercontent.com/proxy/P683VAQCW_zgXgCzpkFNrFb-W8ofcxtOMXS1wAtP5RDXaSddS2gonuOQQcLars6U4WO7KNx0qZduuoUNxkbOejXDLb7-iwhRjABkV_lHtn4rFxg-Hto1kA7UWCYPY0ST57Ib4KD4GV6zzx2wm0kRFsRxstTLhuSiEk1a');
+}
+.rock{
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/592ec50f-7a98-4675-a8f2-7915168c695f/d6i21xk-d18d956e-2fa3-4205-b307-85b757509d27.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvNTkyZWM1MGYtN2E5OC00Njc1LWE4ZjItNzkxNTE2OGM2OTVmXC9kNmkyMXhrLWQxOGQ5NTZlLTJmYTMtNDIwNS1iMzA3LTg1Yjc1NzUwOWQyNy5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.ufHN7Y3s8e_753Qiw5vk3BrBSdBryWLgLuRXxy0ZC40');
+}
+.normal{
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/592ec50f-7a98-4675-a8f2-7915168c695f/d6i1ysq-48f82e67-c444-41d4-bb70-283cfb40fa95.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvNTkyZWM1MGYtN2E5OC00Njc1LWE4ZjItNzkxNTE2OGM2OTVmXC9kNmkxeXNxLTQ4ZjgyZTY3LWM0NDQtNDFkNC1iYjcwLTI4M2NmYjQwZmE5NS5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.InUlXDyMEGnk_dudYnnk-PivtjKHbGcggPakR6vEEuo');
+}
+.fairy{
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/583b297c-a65e-4e89-9185-1746aa1c74f1/d880rh6-1751344f-1d22-4469-847b-b8e6ac82427e.png/v1/fill/w_420,h_590,strp/pokemon_tcg__fairy_restored_card_blank_by_p0kelegends_d880rh6-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD01OTAiLCJwYXRoIjoiXC9mXC81ODNiMjk3Yy1hNjVlLTRlODktOTE4NS0xNzQ2YWExYzc0ZjFcL2Q4ODByaDYtMTc1MTM0NGYtMWQyMi00NDY5LTg0N2ItYjhlNmFjODI0MjdlLnBuZyIsIndpZHRoIjoiPD00MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.2SCKxs7sWFQ70I3rEhju7WWC53fVBO-zsLaZePkVY3k');
+}
+.poison{
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0726fbdd-a6a6-4871-bed6-e8e0b9ce2af0/db5f6gn-e0f28491-936b-4eda-a483-86584f1cc2d5.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvMDcyNmZiZGQtYTZhNi00ODcxLWJlZDYtZThlMGI5Y2UyYWYwXC9kYjVmNmduLWUwZjI4NDkxLTkzNmItNGVkYS1hNDgzLTg2NTg0ZjFjYzJkNS5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.VES65rqyASll9VdeW9O7E3-MwPWq-fxLzSB7tVdWoRU');
+}
+.ice{
+  background-image: url('https://i.pinimg.com/originals/6f/3b/12/6f3b12372f3f82fdb042571e0d15b9f0.png');
+}
+
+.ground{
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0726fbdd-a6a6-4871-bed6-e8e0b9ce2af0/db5fh17-800e1bac-3b94-494f-b310-c87cd4a833cf.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvMDcyNmZiZGQtYTZhNi00ODcxLWJlZDYtZThlMGI5Y2UyYWYwXC9kYjVmaDE3LTgwMGUxYmFjLTNiOTQtNDk0Zi1iMzEwLWM4N2NkNGE4MzNjZi5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.JajDEakHBSidMOTPwdoZqdHIevzC9Ny43HA18UleGlE');
+}
+
+.ghost{
+  background-image: url('https://www.pokebeach.com/images/fake-cards/psychic/neo/basic.jpg');
+}
+
+.ice{
+  background-image: url('https://i.pinimg.com/originals/6f/3b/12/6f3b12372f3f82fdb042571e0d15b9f0.png');
+}
+
+.fighting{
+  background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/592ec50f-7a98-4675-a8f2-7915168c695f/d6i21u3-58fba503-0086-4ab7-80d9-840fd48f522a.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvNTkyZWM1MGYtN2E5OC00Njc1LWE4ZjItNzkxNTE2OGM2OTVmXC9kNmkyMXUzLTU4ZmJhNTAzLTAwODYtNGFiNy04MGQ5LTg0MGZkNDhmNTIyYS5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.ZKKZMGOeJ2vUD8N29uPDaLSsFuTYLUu1BhcLYYluixI');
+  background-color: white;
 }

@@ -3,7 +3,10 @@ import PokeItem from './pokeItem.js';
 
 
 export default class PokeList extends Component {
+
     render() {
+
+
 
         const PokeListLayout =
             this.props.pokemon.map(
@@ -11,8 +14,8 @@ export default class PokeList extends Component {
                 singlePokeObject =>
 
                     <PokeItem key={singlePokeObject.pokemon} pokeProp={
-                        singlePokeObject
-                    } />)
+                        singlePokeObject}
+                    />)
 
 
 
