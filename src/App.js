@@ -8,6 +8,7 @@ import './App.css';
 import Home from './Home.js';
 import Header from './Header.js';
 import Search from './Search.js';
+import Detail from './Detail.js';
 
 
 export default class App extends React.Component {
@@ -26,6 +27,11 @@ export default class App extends React.Component {
               path="/search"
               exact
               render={(routerProps) => <Search {...routerProps} />}
+            />
+            <Route
+              path="/search/:specific"
+              exact
+              render={(routerProps) => <Detail {...routerProps} />}
             />
           </Switch>
         </Router>

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import pokemon from './pokemon.js'
 import Sort from './Sort.js';
 import Searchbar from './Searchbar.js';
 import PokeList from './pokeList.js';
@@ -11,12 +10,16 @@ import Spinner from './Spinner.js'
 
 export default class Search extends Component {
     state = {
-        pokemon: pokemon,
+        pokeData: [],
         sortBy: 'pokemon',
         sortOrder: 'asc',
         filter: '',
         searchQuery: '',
         loading: false,
+
+        totalPokemon: 0,
+        perPage: 12,
+        currentPage: 1,
     }
 
     componentDidMount = async () => {
@@ -25,16 +28,17 @@ export default class Search extends Component {
 
 
     getPokemon = async () => {
-        console.log('the user clicked', this.state.searchQuery, this.state.sortBy, this.state.sortOrder);
+        // console.log('the user clicked', this.state.searchQuery, this.state.sortBy, this.state.sortOrder);
 
         this.setState({ loading: true });
 
-        const data = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex?sort=${this.state.sortBy}&direction=${this.state.sortOrder}&${this.state.sortBy}=${this.state.searchQuery}`)
-        console.log(data);
+        const data = await request.get(`https://pokedex-alchemy.herokuapp.com/api/pokedex?sort=${this.state.sortBy}&direction=${this.state.sortOrder}&${this.state.sortBy}=${this.state.searchQuery}&page=${this.state.currentPage}&perPage=${this.state.perPage}`)
+        // console.log(data);
         this.setState({
             loading: false,
-            pokemon: data.body.results,
-        })
+            pokeData: data.body.results,
+            totalPokemon: data.body.count,
+        });
 
     }
 
@@ -61,13 +65,14 @@ export default class Search extends Component {
     //for search query 
     handleSubmit = async (e) => {
         e.preventDefault();
+        await this.setState({ currentPage: 1 });
         await this.getPokemon();
         // this.setState({ filter: this.state.searchQuery })
     }
 
     //for search query 
     handleInputChange = async (e) => {
-        console.log('the query changed', e.target.value)
+        // console.log('the query changed', e.target.value)
 
         this.setState({
             searchQuery: e.target.value,
@@ -80,15 +85,49 @@ export default class Search extends Component {
 
 
 
+    //page direction 
+    handlePreviousClick = async (e) => {
+        await this.setState({
+            currentPage: this.state.currentPage - 1
+        });
+        await this.getPokemon();
+    }
+
+    handleNextClick = async (e) => {
+        await this.setState({
+            currentPage: this.state.currentPage + 1
+        });
+        await this.getPokemon();
+    }
+
+    //pokemon per page 
+    handlePerPage = async (e) => {
+        this.setState({
+            perPage: e.target.value
+        })
+        await this.getPokemon();
+    }
+
 
 
     render() {
-
+        console.log(this.state.perPage)
+        const lastPage = Math.ceil(this.state.totalPokemon / this.state.perPage);
         return (
             <div className="body">
+
+
+                <select onChange={this.handlePerPage}>
+                    <option value={12}>12</option>
+                    <option value={24}>24</option>
+                    <option value={48}>48</option>
+                    <option value={60}>60</option>
+                </select>
+
+
+                <button disabled={this.state.currentPage === 1} onClick={this.handlePreviousClick}>Previous</button><span>Page: {this.state.currentPage}</span>
+                <button disabled={this.state.currentPage === lastPage} onClick={this.handleNextClick}>Next</button>
                 <div className="sidebar">
-
-
 
                     <Sort handleSortOptionChange={this.handleSortOptionChange} handlePokeOptionChange={this.handlePokeOptionChange} />
                     <Searchbar handleSubmit={this.handleSubmit} handleInputChange={this.handleInputChange} />
@@ -97,7 +136,7 @@ export default class Search extends Component {
                 {
                     this.state.loading
                         ? <Spinner />
-                        : <PokeList pokemon={this.state.pokemon} />
+                        : <PokeList pokemon={this.state.pokeData} />
                 }
             </div>
         )
