@@ -32,13 +32,20 @@ export default class Detail extends Component {
                 {
                     this.state.loading
                         ? <Spinner />
-                        : <div >
-                            <img alt="pokemon" src={this.state.pokeData.url_image}></img>
-                            <div >
-                                <div>name: {this.state.pokeData.pokemon} </div>
+                        : <div className="pokemon-detail-page">
+                            <div className="pokemon-detail-name">{this.state.pokeData.pokemon} </div>
+
+                            <img className="pokemon-detail-img" alt="pokemon" src={this.state.pokeData.url_image}></img>
+                            <div className="pokemon-detail-text-content">
                                 <div>type: {this.state.pokeData.type_1}</div>
                                 <div>attack: {this.state.pokeData.attack} </div>
                                 <div>defense: {this.state.pokeData.defense} </div>
+                                <div>ability: {this.state.pokeData.ability_1} </div>
+                                <div>speed: {this.state.pokeData.speed} </div>
+                                <div>egg group: {this.state.pokeData.egg_group_1} </div>
+                                <div>hp: {this.state.pokeData.hp} </div>
+                                <div>height: {this.state.pokeData.height} </div>
+                                <div>weight: {this.state.pokeData.weight} </div>
                             </div>
                         </div>
                 }

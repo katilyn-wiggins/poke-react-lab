@@ -116,15 +116,16 @@ export default class Search extends Component {
         const lastPage = Math.ceil(this.state.totalPokemon / this.state.perPage);
         return (
             <div className="body">
-                <select onChange={this.handlePerPage}>
-                    <option value={12}>12</option>
-                    <option value={24}>24</option>
-                    <option value={48}>48</option>
-                    <option value={60}>60</option>
-                </select>
+                <div className="page-tools">
+                    Items per page:
+                    <select onChange={this.handlePerPage}>
+                        <option value={12}>12</option>
+                        <option value={24}>24</option>
+                        <option value={48}>48</option>
+                        <option value={60}>60</option>
+                    </select>
 
-                <button disabled={this.state.currentPage === 1} onClick={this.handlePreviousClick}>Previous</button><span>Page: {this.state.currentPage}</span>
-                <button disabled={this.state.currentPage === lastPage} onClick={this.handleNextClick}>Next</button>
+                </div>
                 <div className="sidebar">
 
                     <Sort handleSortOptionChange={this.handleSortOptionChange} handlePokeOptionChange={this.handlePokeOptionChange} />
@@ -140,6 +141,10 @@ export default class Search extends Component {
                         : <PokeList pokemon={this.state.pokeData} />
 
                 }
+                <div className="prev-next">
+                    <button disabled={this.state.currentPage === 1} onClick={this.handlePreviousClick}>Previous</button><span>Page: {this.state.currentPage}</span>
+                    <button disabled={this.state.currentPage === lastPage} onClick={this.handleNextClick}>Next</button>
+                </div>
             </div>
         )
 
